@@ -7,30 +7,6 @@ struct node
  struct node *next;
 };
 
-struct node *addition(struct node *,struct node *);
-struct node *list(struct node *);
-struct node *insert(struct node *,int,int);
-void display(struct node *);
-
-void main( )
- {
-  struct node *p_start,*q_start,*r_start;
-  p_start=NULL;
-  q_start=NULL;
-  r_start=NULL;
-  printf("Polynomial 1 :\n");
-  p_start=list(p_start);
-  printf("Polynomial 2 :\n");
-  q_start=list(q_start);
-  r_start=addition(p_start,q_start);
-  printf("Polynomial 1 is : ");
-  display(p_start);
-  printf("Polynomial 2 is : ");
-  display(q_start);
-  printf("Resultant polynomial is : ");
-  display(r_start);
- }
-
 struct node *list(struct node *start)
  {
   int i,n,ex;
@@ -170,4 +146,23 @@ void display(struct node *ptr)
     ptr=ptr->next;
    }
   printf("\b\b \n");
+ }
+
+void main( )
+ {
+  struct node *p_start,*q_start,*r_start;
+  p_start=NULL;
+  q_start=NULL;
+  r_start=NULL;
+  printf("Polynomial 1 :\n");
+  p_start=list(p_start);
+  printf("Polynomial 2 :\n");
+  q_start=list(q_start);
+  r_start=addition(p_start,q_start);
+  printf("Polynomial 1 is : ");
+  display(p_start);
+  printf("Polynomial 2 is : ");
+  display(q_start);
+  printf("Resultant polynomial is : ");
+  display(r_start);
  }
